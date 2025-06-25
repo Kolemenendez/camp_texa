@@ -1,3 +1,4 @@
+step 2 
 #!/bin/bash
 #SBATCH --chdir=.
 #SBATCH --job-name=align
