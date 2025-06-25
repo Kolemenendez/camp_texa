@@ -1,3 +1,4 @@
+step 1 
 step 1 # 01a_extract_blochmannia.sh
 #!/bin/bash
 #SBATCH --chdir=.
