@@ -1,0 +1,59 @@
+eems.sh
+#!/bin/bash
+#SBATCH --chdir=./
+#SBATCH --job-name=eems
+#SBATCH --partition nocona
+#SBATCH --nodes=1 --ntasks=8
+#SBATCH --time=48:00:00
+#SBATCH --mem-per-cpu=16G
+
+source activate eems
+
+cd /lustre/scratch/kmenende/camptexa/01_blochmannia/05_filtered_vcf/eems/
+
+/home/kmenende/eems/runeems_snps/src/runeems_snps --params eems.params --seed 123
+
+# 5. upon submission it will create a folder with output name which will have all figures needed.
+
+
+
+eems.params
+datapath = /lustre/scratch/kmenende/camptexa/01_blochmannia/05_filtered_vcf/eems
+mcmcpath = /lustre/scratch/kmenende/camptexa/01_blochmannia/05_filtered_vcf/eems/newoutput
+nIndiv = 16
+nSites = 31275
+nDemes = 175
+diploid = false
+numMCMCIter = 10000000
+numBurnIter = 1000000
+numThinIter = 1999
+
+
+eems.coord
+29.26677        -103.30466
+29.26462        -103.30387
+30.05012        -97.16135
+30.05374        -97.16602
+32.87828        -98.55645
+32.25347        -97.81316
+32.24479        -97.82047
+31.89157        -97.70811
+30.17882        -97.7228
+29.86881        -98.49529
+30.59414        -103.93715
+30.59293        -103.94054
+30.69666        -104.12244
+31.32374        -97.47042
+31.32356        -97.47041
+31.32307        -97.46974
+
+
+eems.outer
+32.011018       -105.513
+29.51913        -105.4251
+29.059203       -103.13994
+28.210666       -96.943675
+30.35691        -95.317698
+33.708949       -95.449534
+33.782031       -102.52479
+32.011018       -105.51301
